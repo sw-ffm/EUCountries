@@ -15,6 +15,15 @@ use swffm\EUCountries\Countries\Germany;
 use swffm\EUCountries\Countries\Greece;
 use swffm\EUCountries\Countries\Ireland;
 use swffm\EUCountries\Countries\Italy;
+use swffm\EUCountries\Countries\Latvia;
+use swffm\EUCountries\Countries\Lithuania;
+use swffm\EUCountries\Countries\Luxembourg;
+use swffm\EUCountries\Countries\Malta;
+use swffm\EUCountries\Countries\Netherlands;
+use swffm\EUCountries\Countries\Poland;
+use swffm\EUCountries\Countries\Portugal;
+use swffm\EUCountries\Countries\Romania;
+use swffm\EUCountries\Countries\Sweden;
 
 class EUCountryFactory 
 {
@@ -71,6 +80,42 @@ class EUCountryFactory
         }else if($country == "it"){
 
             return new Italy;
+
+        }else if($country == "lv"){
+
+            return new Latvia;
+
+        }else if($country == "lt"){
+
+            return new Lithuania;
+
+        }else if($country == "lu"){
+
+            return new Luxembourg;
+
+        }else if($country == "mt"){
+
+            return new Malta;
+
+        }else if($country == "nl"){
+
+            return new Netherlands;
+
+        }else if($country == "pl"){
+
+            return new Poland;
+
+        }else if($country == "pt"){
+
+            return new Portugal;
+
+        }else if($country == "ro"){
+
+            return new Romania;
+
+        }else if($country == "se"){
+
+            return new Sweden;
 
         }else{
 
