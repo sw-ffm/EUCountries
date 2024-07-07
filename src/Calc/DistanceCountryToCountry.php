@@ -13,7 +13,7 @@ class DistanceCountryToCountry extends Calculator
 
     protected $country2;
 
-    private $earthRadius = '6371.0';
+    private $earthRadius = '6378.1';
 
 
     function __construct( EUCountries $country1, EUCountries $country2 ){
