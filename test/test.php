@@ -48,6 +48,18 @@ $country = EUCountryFactory::generate( 'ro' );
 print json_encode( $country );
 $country = EUCountryFactory::generate( 'se' );
 print json_encode( $country );
+$country = EUCountryFactory::generate( 'sk' );
+print json_encode( $country );
+$country = EUCountryFactory::generate( 'si' );
+print json_encode( $country );
+$country = EUCountryFactory::generate( 'es' );
+print json_encode( $country );
+$country = EUCountryFactory::generate( 'cz' );
+print json_encode( $country );
+$country = EUCountryFactory::generate( 'hu' );
+print json_encode( $country );
+$country = EUCountryFactory::generate( 'cy' );
+print json_encode( $country );
 # 'de' works as well
 $country = EUCountryFactory::generate('de');
 print json_encode( $country );
