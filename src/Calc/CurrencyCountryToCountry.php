@@ -6,7 +6,7 @@ use swffm\EUCountries\Calc\Calculator;
 use swffm\EUCountries\EUCountries;
 
 
-class CountryToCountry extends Calculator
+class CurrencyCountryToCountry extends Calculator
 {
 
     protected $country1;

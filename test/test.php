@@ -100,10 +100,17 @@ print "\n\n<br><br>";
 
 
 #Calculation of the monetary value from country to country
-use swffm\EUCountries\Calc\CountryToCountry;
+use swffm\EUCountries\Calc\CurrencyCountryToCountry;
 $country1 = EUCountryFactory::generate( 'de' );
 $country2 = EUCountryFactory::generate( 'dk' );
-$calculator = new CountryToCountry( $country1, $country2 );
+$calculator = new CurrencyCountryToCountry( $country1, $country2 );
 $result = $calculator->calc( '1' )->getResult();
 print $result . ' ' . $country2->currencySymbol;
+print "\n\n<br><br>";
+
+
+#Calculation of the distance between two countries from center lat/lon to center lat/lon
+use swffm\EUCountries\Calc\DistanceCountryToCountry;
+$calculator = new DistanceCountryToCountry( $country1, $country2 );
+print $calculator->getResult() . ' km';
 print "\n\n<br><br>";
