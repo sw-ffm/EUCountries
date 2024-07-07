@@ -60,9 +60,6 @@ $country = EUCountryFactory::generate( 'hu' );
 print json_encode( $country );
 $country = EUCountryFactory::generate( 'cy' );
 print json_encode( $country );
-# 'de' works as well
-$country = EUCountryFactory::generate('de');
-print json_encode( $country );
 
 # Exception testing
 // EUCountryFactory::generate('us');
@@ -101,6 +98,7 @@ print "\n\n<br><br>";
 
 #Calculation of the monetary value from country to country
 use swffm\EUCountries\Calc\CurrencyCountryToCountry;
+
 $country1 = EUCountryFactory::generate( 'de' );
 $country2 = EUCountryFactory::generate( 'dk' );
 $calculator = new CurrencyCountryToCountry( $country1, $country2 );
@@ -111,6 +109,7 @@ print "\n\n<br><br>";
 
 #Calculation of the distance between two countries from center lat/lon to center lat/lon
 use swffm\EUCountries\Calc\DistanceCountryToCountry;
+
 $calculator = new DistanceCountryToCountry( $country1, $country2 );
 print $calculator->getResult() . ' km';
 print "\n\n<br><br>";
