@@ -3,7 +3,7 @@
 namespace swffm\EUCountries\Countries;
 
 
-class ClassMap 
+class ClassMapper
 {
 
     protected static $classMap = null;
