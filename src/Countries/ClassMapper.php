@@ -6,10 +6,38 @@ namespace swffm\EUCountries\Countries;
 class ClassMapper
 {
 
+    private static $instance = null;
+    
     protected static $classMap = null;
 
 
-    public static function createMap(){
+    private function __clone(){}
+
+    public function __wakeup(){
+
+        throw new \Exception("Cannot unserialize a singleton.");
+    
+    }
+
+    private function __construct(){
+
+        $this->createMap();
+
+    }
+
+    public static function getInstance(){
+
+        if ( self::$instance === null ){
+
+            self::$instance = new self();
+
+        }
+
+        return self::$instance;
+
+    }    
+
+    protected static function createMap(){
 
         self::$classMap = [
 
@@ -45,22 +73,10 @@ class ClassMapper
 
     }
 
-    public static function get( $iso ) : string{
+    public function get(string $iso): string{
 
-        if(is_null( self::$classMap )){
-
-            self::createMap();
-
-        }
-
-        if( isset( self::$classMap[ $iso ] ) ){
-
-            return self::$classMap[ $iso ];
-
-        }
-
-        return "";
-
+        return self::$classMap[$iso] ?? "";
+    
     }
 
 }

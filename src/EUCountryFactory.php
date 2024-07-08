@@ -8,10 +8,10 @@ use swffm\EUCountries\Countries\ClassMapper;
 class EUCountryFactory 
 {
 
-    public static function generate( $country="de" ) : EUCountries
+    public static function generate( $countryIso="de" ) : EUCountries
     {
 
-        $className = ClassMapper::get( strtolower( $country ) );
+        $className = ClassMapper::getInstance()->get( strtolower( $countryIso ) );
 
         if(class_exists( $className )){
 
@@ -19,7 +19,7 @@ class EUCountryFactory
 
         }
 
-        throw new \Exception('Country ' . $country . ' not found!');
+        throw new \Exception('Country ' . $countryIso . ' not found!');
 
     }
 
