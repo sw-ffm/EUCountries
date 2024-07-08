@@ -5,4 +5,4 @@ EU country PHP development library
 `composer require sw-ffm/eu-countries`
 
 ## Usage 
-See [test/test.php](test/test.php)
+See [test/testdb.php](test/testdb.php)

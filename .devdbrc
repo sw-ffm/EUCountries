@@ -1,0 +1,6 @@
+[
+  {
+    "type": "sqlite",
+    "path": "/home/stefan/git/EUCountries/data/countries.sqlite"
+  }
+]
