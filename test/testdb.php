@@ -62,7 +62,7 @@ $country = EUCountryFactoryDB::generate( 'cy' );
 print json_encode( $country );
 
 # Exception testing
-// EUCountryFactoryDB::generate('us');
+//EUCountryFactoryDB::generate('us');
 print "\n\n<br><br>";
 
 # CALCULATIONS
