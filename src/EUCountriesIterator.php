@@ -2,6 +2,7 @@
 
 namespace swffm\EUCountries;
 
+use swffm\EUCountries\EUCountry;
 use swffm\EUCountries\Countries\EUCountriesListing;
 
 
@@ -20,7 +21,7 @@ class EUCountriesIterator implements \Iterator
 
     }
 
-    public function current() : object
+    public function current() : EUCountry
     {
         return $this->euCountries[$this->position];
     }
