@@ -1,10 +1,12 @@
 <?php
 
-namespace swffm\EUCountries;
+namespace swffm\EUCountries\Models;
 
 
-abstract class EUCountry
+abstract class EUCountryInterface
 {
+
+    public int $id;
 
     public string $iso;
 

@@ -2,14 +2,16 @@
 
 namespace swffm\EUCountries\Models; 
 
-use swffm\EUCountries\EUCountry; 
+use swffm\EUCountries\Models\EUCountryInterface; 
 
 
-class Country extends EUCountry
+class Country extends EUCountryInterface
 {
 
     function __construct( Array $dbdata ){
 
+        $this->id = $dbdata["id"];
+        
         $this->iso = $dbdata["iso"];
 
         $this->nameGerman = $dbdata["name_german"];

@@ -3,13 +3,13 @@
 namespace swffm\EUCountries\Calc;
 
 use swffm\EUCountries\Calc\Calculator;
-use swffm\EUCountries\EUCountry;
+use swffm\EUCountries\Models\EUCountryInterface;
 
 
 class GrossFromNet extends Calculator
 {
 
-    function __construct( EUCountry $country ){
+    function __construct( EUCountryInterface $country ){
 
         $this->country = $country;
 

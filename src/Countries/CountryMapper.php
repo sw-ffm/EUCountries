@@ -2,14 +2,15 @@
 
 namespace swffm\EUCountries\Countries;
 
-use swffm\EUCountries\EUCountry;
 use swffm\EUCountries\Models\Country;
+use swffm\EUCountries\Models\EUCountryInterface;
 use swffm\EUCountries\Repositories\CountryRepository;
+
 
 class CountryMapper
 {
 
-    public function getCountryObject( string $iso ) : EUCountry{
+    public function getCountryObject( string $iso ) : EUCountryInterface{
 
         $iso = $iso != "" ? $iso : "de";
         $repository = new CountryRepository();

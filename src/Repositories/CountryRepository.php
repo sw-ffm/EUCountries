@@ -3,7 +3,7 @@
 namespace swffm\EUCountries\Repositories;
 
 use swffm\EUCountries\Database\PDOConnector;
-use swffm\EUCountries\EUCountry;
+use swffm\EUCountries\Models\EUCountryInterface;
 
 
 class CountryRepository implements CountryRepositoryInterface 
@@ -25,7 +25,7 @@ class CountryRepository implements CountryRepositoryInterface
 
     }
 
-    public function update( EUCountry $country ){
+    public function update( EUCountryInterface $country ){
 
         /*Not yet implemented*/
         $this->sqlStatementUpdate();
@@ -38,6 +38,7 @@ class CountryRepository implements CountryRepositoryInterface
         return "
         
             SELECT 
+                a.id AS id, 
                 a.iso AS iso,
                 a.name_german AS name_german,
                 a.name_local AS name_local,
@@ -46,6 +47,7 @@ class CountryRepository implements CountryRepositoryInterface
                 a.center_lat AS center_lat,
                 a.center_lon AS center_lon,
                 a.vat_rate AS vat_rate,
+                b.id AS currency_id,
                 b.iso AS currency_iso,
                 b.symbol AS currency_symbol,
                 b.rate_to_euro AS rate_to_euro 
