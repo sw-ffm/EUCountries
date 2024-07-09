@@ -2,10 +2,9 @@
 
 namespace swffm\EUCountries\Countries;
 
-use swffm\EUCountries\Database\PDOConnector;
 use swffm\EUCountries\EUCountry;
 use swffm\EUCountries\Models\Country;
-
+use swffm\EUCountries\Repositories\CountryRepository;
 
 class CountryMapper
 {
@@ -13,9 +12,9 @@ class CountryMapper
     public function getCountryObject( string $iso ) : EUCountry{
 
         $iso = $iso != "" ? $iso : "de";
-        $stmt = PDOConnector::getInstance()->prepare( $this->sqlStatement() );
-        $stmt->execute( [$iso] );
-        if( $dbdata = $stmt->fetch( \PDO::FETCH_ASSOC ) ){
+        $repository = new CountryRepository();
+        $result = $repository->getByISO( $iso );
+        if( $dbdata = $result->fetch( \PDO::FETCH_ASSOC ) ){
 
             return new Country( $dbdata );
 
