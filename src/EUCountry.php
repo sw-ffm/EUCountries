@@ -3,7 +3,7 @@
 namespace swffm\EUCountries;
 
 
-abstract class EUCountries
+abstract class EUCountry
 {
 
     public string $iso;

@@ -3,32 +3,36 @@
 namespace swffm\EUCountries\Countries;
 
 use swffm\EUCountries\Database\PDOConnector;
-use swffm\EUCountries\EUCountry;
 use swffm\EUCountries\Models\Country;
 
 
-class CountryMapper
+class EUCountriesListing 
 {
 
-    public function getCountryObject( string $iso ) : EUCountry{
+    private $euCountries = [];
 
-        $iso = $iso != "" ? $iso : "de";
+    function __construct(){
+
         $stmt = PDOConnector::getInstance()->prepare( $this->sqlStatement() );
-        $stmt->execute( [$iso] );
-        if( $dbdata = $stmt->fetch( \PDO::FETCH_ASSOC ) ){
+        $stmt->execute( [] );
+        while( $dbdata = $stmt->fetch( \PDO::FETCH_ASSOC ) ){
 
-            return new Country( $dbdata );
+            $this->euCountries[] = new Country( $dbdata );
 
         }
 
-        throw new \Exception('Country ' . $iso . ' not found!');
+    }
+
+    public function getEUCountries() : array{
+
+        return $this->euCountries;
 
     }
 
     private function sqlStatement() : string{
 
         return "
-
+        
             SELECT 
                 a.iso AS iso,
                 a.name_german AS name_german,
@@ -43,7 +47,7 @@ class CountryMapper
                 b.rate_to_euro AS rate_to_euro 
             FROM countries a 
             LEFT JOIN currencies b ON b.id = a.currency 
-            WHERE a.iso=?
+            ORDER BY a.iso ASC
         
         ";
 

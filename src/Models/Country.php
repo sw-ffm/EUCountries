@@ -2,10 +2,10 @@
 
 namespace swffm\EUCountries\Models; 
 
-use swffm\EUCountries\EUCountries; 
+use swffm\EUCountries\EUCountry; 
 
 
-class Country extends EUCountries
+class Country extends EUCountry
 {
 
     function __construct( Array $dbdata ){

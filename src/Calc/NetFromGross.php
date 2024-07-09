@@ -3,13 +3,13 @@
 namespace swffm\EUCountries\Calc;
 
 use swffm\EUCountries\Calc\Calculator;
-use swffm\EUCountries\EUCountries;
+use swffm\EUCountries\EUCountry;
 
 
 class NetFromGross extends Calculator
 {
 
-    function __construct( EUCountries $country ){
+    function __construct( EUCountry $country ){
 
         $this->country = $country;
 
