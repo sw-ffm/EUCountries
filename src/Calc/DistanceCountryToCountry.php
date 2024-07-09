@@ -3,7 +3,7 @@
 namespace swffm\EUCountries\Calc;
 
 use swffm\EUCountries\Calc\Calculator;
-use swffm\EUCountries\EUCountries;
+use swffm\EUCountries\EUCountrie;
 
 
 class DistanceCountryToCountry extends Calculator
@@ -16,7 +16,7 @@ class DistanceCountryToCountry extends Calculator
     private $earthRadius = '6378.1';
 
 
-    function __construct( EUCountries $country1, EUCountries $country2 ){
+    function __construct( EUCountrie $country1, EUCountrie $country2 ){
 
         $this->country1 = $country1;
 
