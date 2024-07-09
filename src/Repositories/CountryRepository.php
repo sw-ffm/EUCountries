@@ -5,6 +5,7 @@ namespace swffm\EUCountries\Repositories;
 use swffm\EUCountries\Database\PDOConnector;
 use swffm\EUCountries\EUCountry;
 
+
 class CountryRepository implements CountryRepositoryInterface 
 {
 
@@ -26,7 +27,9 @@ class CountryRepository implements CountryRepositoryInterface
 
     public function update( EUCountry $country ){
 
-
+        $stmt = PDOConnector::getInstance()->prepare( $this->sqlStatementUpdateCurrency() );
+        $stmt->execute( [$country->rateToEuro, $country->currency] );
+        return $stmt;
 
     }
 
@@ -63,5 +66,10 @@ class CountryRepository implements CountryRepositoryInterface
 
     }
 
+    private function sqlStatementUpdateCurrency() : string{
+
+        return "UPDATE currencies SET rate_to_euro=? WHERE iso=?";
+
+    }
 
 }
