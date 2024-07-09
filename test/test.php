@@ -9,8 +9,8 @@ use swffm\EUCountries\EUCountryFactory;
 $countryIterator = new EUCountriesIterator();
 foreach( $countryIterator as $country  ){
     print ((int)$countryIterator->key() + 1) . ". " . $country->iso . " | " . $country->nameEnglish . "<br>";
-    $country = EUCountryFactory::generate( $country->iso );
-    print json_encode( $country );
+    $factoryCountry = EUCountryFactory::generate( $country->iso );
+    print json_encode( $factoryCountry );
     print "\n\n<br><br>";
 }
 
