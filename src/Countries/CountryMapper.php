@@ -3,13 +3,14 @@
 namespace swffm\EUCountries\Countries;
 
 use swffm\EUCountries\Database\PDOConnector;
+use swffm\EUCountries\EUCountry;
 use swffm\EUCountries\Models\Country;
 
 
 class CountryMapper
 {
 
-    public function getCountryObject( string $iso ){
+    public function getCountryObject( string $iso ) : EUCountry{
 
         $iso = $iso != "" ? $iso : "de";
         $stmt = PDOConnector::getInstance()->prepare( $this->sqlStatement() );
