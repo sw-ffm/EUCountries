@@ -113,3 +113,10 @@ use swffm\EUCountries\Calc\DistanceCountryToCountry;
 $calculator = new DistanceCountryToCountry( $country1, $country2 );
 print $calculator->getResult() . ' km';
 print "\n\n<br><br>";
+
+#Listing EU countries
+use swffm\EUCountries\EUCountriesIterator;
+$countryIterator = new EUCountriesIterator();
+foreach( $countryIterator as $country  ){
+    print ((int)$countryIterator->key() + 1) . ". " . $country->iso . " | " . $country->nameEnglish . "<br>";
+}
