@@ -23,6 +23,7 @@ foreach( $countryIterator as $country  ){
 # Gross from net 
 use swffm\EUCountries\Calc\GrossFromNet;
 
+$country = EUCountryFactory::generate( 'de' );
 $calculator = new GrossFromNet( $country );
 $result = $calculator->calc( '1' )->getResult();
 print $result;
@@ -54,7 +55,7 @@ print "\n\n<br><br>";
 use swffm\EUCountries\Calc\CurrencyCountryToCountry;
 
 $country1 = EUCountryFactory::generate( 'de' );
-$country2 = EUCountryFactory::generate( 'dk' );
+$country2 = EUCountryFactory::generate( 'nl' );
 $calculator = new CurrencyCountryToCountry( $country1, $country2 );
 $result = $calculator->calc( '1' )->getResult();
 print $result . ' ' . $country2->currencySymbol;
