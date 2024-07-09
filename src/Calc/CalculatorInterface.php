@@ -2,7 +2,8 @@
 
 namespace swffm\EUCountries\Calc;
 
-abstract class Calculator 
+
+abstract class CalculatorInterface
 {
 
     protected $vat; 

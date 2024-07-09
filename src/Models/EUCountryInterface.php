@@ -1,10 +1,12 @@
 <?php
 
-namespace swffm\EUCountries;
+namespace swffm\EUCountries\Models;
 
 
-abstract class EUCountry
+abstract class EUCountryInterface
 {
+
+    public int $id;
 
     public string $iso;
 
@@ -22,7 +24,9 @@ abstract class EUCountry
 
     public string $vatRate;
 
-    public string $currency;
+    public string $currencyId;
+
+    public string $currencyIso;
 
     public string $currencySymbol;
 

@@ -2,11 +2,11 @@
 
 namespace swffm\EUCountries\Calc;
 
-use swffm\EUCountries\Calc\Calculator;
-use swffm\EUCountries\EUCountry;
+use swffm\EUCountries\Calc\CalculatorInterface;
+use swffm\EUCountries\Models\EUCountryInterface;
 
 
-class CurrencyCountryToCountry extends Calculator
+class CurrencyCountryToCountry extends CalculatorInterface
 {
 
     protected $country1;
@@ -14,7 +14,7 @@ class CurrencyCountryToCountry extends Calculator
     protected $country2;
 
 
-    function __construct( EUCountry $country1, EUCountry $country2 ){
+    function __construct( EUCountryInterface $country1, EUCountryInterface $country2 ){
 
         $this->country1 = $country1;
 

@@ -2,11 +2,12 @@
 
 namespace swffm\EUCountries\Repositories;
 
-use swffm\EUCountries\EUCountry;
+use swffm\EUCountries\Models\EUCountryInterface;
+
 
 interface CountryRepositoryInterface
 {
     public function getAll();
     public function getByISO( $iso );
-    public function update( EUCountry $country );
+    public function update( EUCountryInterface $country );
 }

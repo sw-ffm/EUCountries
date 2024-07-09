@@ -2,14 +2,16 @@
 
 namespace swffm\EUCountries\Models; 
 
-use swffm\EUCountries\EUCountry; 
+use swffm\EUCountries\Models\EUCountryInterface; 
 
 
-class Country extends EUCountry
+class Country extends EUCountryInterface
 {
 
     function __construct( Array $dbdata ){
 
+        $this->id = $dbdata["id"];
+        
         $this->iso = $dbdata["iso"];
 
         $this->nameGerman = $dbdata["name_german"];
@@ -26,7 +28,9 @@ class Country extends EUCountry
 
         $this->vatRate = $dbdata["vat_rate"];
 
-        $this->currency = $dbdata["currency_iso"];
+        $this->currencyId = $dbdata["currency_id"];
+
+        $this->currencyIso = $dbdata["currency_iso"];
 
         $this->currencySymbol = $dbdata["currency_symbol"];
 

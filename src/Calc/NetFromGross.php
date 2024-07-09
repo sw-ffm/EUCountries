@@ -2,14 +2,14 @@
 
 namespace swffm\EUCountries\Calc;
 
-use swffm\EUCountries\Calc\Calculator;
-use swffm\EUCountries\EUCountry;
+use swffm\EUCountries\Calc\CalculatorInterface;
+use swffm\EUCountries\Models\EUCountryInterface;
 
 
-class NetFromGross extends Calculator
+class NetFromGross extends CalculatorInterface
 {
 
-    function __construct( EUCountry $country ){
+    function __construct( EUCountryInterface $country ){
 
         $this->country = $country;
 
