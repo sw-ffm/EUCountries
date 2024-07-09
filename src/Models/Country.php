@@ -30,7 +30,7 @@ class Country extends EUCountryInterface
 
         $this->currencyId = $dbdata["currency_id"];
 
-        $this->currency = $dbdata["currency_iso"];
+        $this->currencyIso = $dbdata["currency_iso"];
 
         $this->currencySymbol = $dbdata["currency_symbol"];
 

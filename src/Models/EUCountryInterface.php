@@ -26,7 +26,7 @@ abstract class EUCountryInterface
 
     public string $currencyId;
 
-    public string $currency;
+    public string $currencyIso;
 
     public string $currencySymbol;
 
