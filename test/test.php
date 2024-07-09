@@ -14,7 +14,6 @@ foreach( $countryIterator as $country  ){
     print "\n\n<br><br>";
 }
 
-
 # Exception testing
 // EUCountryFactory::generate('us');
 // print "\n\n<br><br>";
