@@ -16,8 +16,7 @@ class EUCountriesIterator implements \Iterator
 
     function __construct(){
 
-        $listing = new EUCountriesListing();
-        $this->euCountries = $listing->getEUCountries();
+        $this->euCountries = EUCountriesListing::getEUCountries();
 
     }
 

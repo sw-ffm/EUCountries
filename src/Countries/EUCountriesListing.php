@@ -9,27 +9,40 @@ use swffm\EUCountries\Models\Country;
 class EUCountriesListing 
 {
 
-    private $euCountries = [];
+    private static $euCountries = null;
 
-    function __construct(){
 
-        $stmt = PDOConnector::getInstance()->prepare( $this->sqlStatement() );
-        $stmt->execute( [] );
-        while( $dbdata = $stmt->fetch( \PDO::FETCH_ASSOC ) ){
+    private function __clone(){}
 
-            $this->euCountries[] = new Country( $dbdata );
+    public function __wakeup(){
+
+        throw new \Exception("Cannot unserialize a singleton.");
+    
+    }
+
+    private function __construct(){}
+
+    public static function getEUCountries() : array{
+
+        if( self::$euCountries === null ){
+
+            self::$euCountries = [];
+
+            $stmt = PDOConnector::getInstance()->prepare( self::sqlStatement() );
+            $stmt->execute( [] );
+            while( $dbdata = $stmt->fetch( \PDO::FETCH_ASSOC ) ){
+
+                self::$euCountries[] = new Country( $dbdata );
+
+            }
 
         }
 
-    }
-
-    public function getEUCountries() : array{
-
-        return $this->euCountries;
+        return self::$euCountries;
 
     }
 
-    private function sqlStatement() : string{
+    private static function sqlStatement() : string{
 
         return "
         
