@@ -28,6 +28,8 @@ class Country extends EUCountryInterface
 
         $this->vatRate = $dbdata["vat_rate"];
 
+        $this->currencyId = $dbdata["currency_id"];
+
         $this->currency = $dbdata["currency_iso"];
 
         $this->currencySymbol = $dbdata["currency_symbol"];

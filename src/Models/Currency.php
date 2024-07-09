@@ -2,7 +2,7 @@
 
 namespace swffm\EUCountries\Models;
 
-use EUCurrencyInterface;
+use swffm\EUCountries\Models\EUCurrencyInterface;
 
 
 class Currency extends EUCurrencyInterface

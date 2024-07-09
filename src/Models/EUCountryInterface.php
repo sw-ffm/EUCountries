@@ -24,6 +24,8 @@ abstract class EUCountryInterface
 
     public string $vatRate;
 
+    public string $currencyId;
+
     public string $currency;
 
     public string $currencySymbol;
