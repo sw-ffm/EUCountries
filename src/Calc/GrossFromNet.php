@@ -2,11 +2,11 @@
 
 namespace swffm\EUCountries\Calc;
 
-use swffm\EUCountries\Calc\Calculator;
+use swffm\EUCountries\Calc\CalculatorInterface;
 use swffm\EUCountries\Models\EUCountryInterface;
 
 
-class GrossFromNet extends Calculator
+class GrossFromNet extends CalculatorInterface
 {
 
     function __construct( EUCountryInterface $country ){

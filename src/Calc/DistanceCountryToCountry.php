@@ -2,11 +2,11 @@
 
 namespace swffm\EUCountries\Calc;
 
-use swffm\EUCountries\Calc\Calculator;
+use swffm\EUCountries\Calc\CalculatorInterface;
 use swffm\EUCountries\Models\EUCountryInterface;
 
 
-class DistanceCountryToCountry extends Calculator
+class DistanceCountryToCountry extends CalculatorInterface
 {
 
     protected $country1;
