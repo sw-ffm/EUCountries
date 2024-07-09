@@ -27,9 +27,9 @@ class CountryRepository implements CountryRepositoryInterface
 
     public function update( EUCountry $country ){
 
-        $stmt = PDOConnector::getInstance()->prepare( $this->sqlStatementUpdateCurrency() );
-        $stmt->execute( [$country->rateToEuro, $country->currency] );
-        return $stmt;
+        /*Not yet implemented*/
+        $this->sqlStatementUpdate();
+        return null;
 
     }
 
@@ -66,9 +66,9 @@ class CountryRepository implements CountryRepositoryInterface
 
     }
 
-    private function sqlStatementUpdateCurrency() : string{
+    private function sqlStatementUpdate() : string{
 
-        return "UPDATE currencies SET rate_to_euro=? WHERE iso=?";
+        return "";
 
     }
 
