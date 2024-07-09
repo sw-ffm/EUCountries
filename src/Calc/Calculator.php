@@ -2,6 +2,7 @@
 
 namespace swffm\EUCountries\Calc;
 
+
 abstract class Calculator 
 {
 

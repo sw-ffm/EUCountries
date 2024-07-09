@@ -5,6 +5,7 @@ namespace swffm\EUCountries\Calc;
 use swffm\EUCountries\Calc\Calculator;
 use swffm\EUCountries\Models\EUCountryInterface;
 
+
 class CurrencyCountryToCountry extends Calculator
 {
 

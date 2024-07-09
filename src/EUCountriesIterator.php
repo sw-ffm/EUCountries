@@ -5,6 +5,7 @@ namespace swffm\EUCountries;
 use swffm\EUCountries\Countries\EUCountriesListing;
 use swffm\EUCountries\Models\EUCountryInterface;
 
+
 class EUCountriesIterator implements \Iterator
 {
 
